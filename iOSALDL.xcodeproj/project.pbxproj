@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ADA321252538027A00921B0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA321242538027A00921B0E /* AppDelegate.m */; };
+		ADA321282538027A00921B0E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA321272538027A00921B0E /* SceneDelegate.m */; };
+		ADA3212B2538027A00921B0E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA3212A2538027A00921B0E /* ViewController.m */; };
+		ADA3212E2538027A00921B0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADA3212C2538027A00921B0E /* Main.storyboard */; };
+		ADA321302538027C00921B0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADA3212F2538027C00921B0E /* Assets.xcassets */; };
+		ADA321332538027C00921B0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADA321312538027C00921B0E /* LaunchScreen.storyboard */; };
+		ADA321362538027C00921B0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA321352538027C00921B0E /* main.m */; };
+		ADA321402538027D00921B0E /* iOSALDLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA3213F2538027D00921B0E /* iOSALDLTests.m */; };
+		ADA3214B2538027D00921B0E /* iOSALDLUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA3214A2538027D00921B0E /* iOSALDLUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ADA3213C2538027D00921B0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADA321182538027A00921B0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADA3211F2538027A00921B0E;
+			remoteInfo = iOSALDL;
+		};
+		ADA321472538027D00921B0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADA321182538027A00921B0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADA3211F2538027A00921B0E;
+			remoteInfo = iOSALDL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ADA321202538027A00921B0E /* iOSALDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSALDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADA321232538027A00921B0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ADA321242538027A00921B0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ADA321262538027A00921B0E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		ADA321272538027A00921B0E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		ADA321292538027A00921B0E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ADA3212A2538027A00921B0E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ADA3212D2538027A00921B0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ADA3212F2538027C00921B0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ADA321322538027C00921B0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ADA321342538027C00921B0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADA321352538027C00921B0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ADA3213B2538027D00921B0E /* iOSALDLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSALDLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADA3213F2538027D00921B0E /* iOSALDLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSALDLTests.m; sourceTree = "<group>"; };
+		ADA321412538027D00921B0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADA321462538027D00921B0E /* iOSALDLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSALDLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADA3214A2538027D00921B0E /* iOSALDLUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSALDLUITests.m; sourceTree = "<group>"; };
+		ADA3214C2538027D00921B0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ADA3211D2538027A00921B0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADA321382538027D00921B0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADA321432538027D00921B0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ADA321172538027A00921B0E = {
+			isa = PBXGroup;
+			children = (
+				ADA321222538027A00921B0E /* iOSALDL */,
+				ADA3213E2538027D00921B0E /* iOSALDLTests */,
+				ADA321492538027D00921B0E /* iOSALDLUITests */,
+				ADA321212538027A00921B0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ADA321212538027A00921B0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADA321202538027A00921B0E /* iOSALDL.app */,
+				ADA3213B2538027D00921B0E /* iOSALDLTests.xctest */,
+				ADA321462538027D00921B0E /* iOSALDLUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADA321222538027A00921B0E /* iOSALDL */ = {
+			isa = PBXGroup;
+			children = (
+				ADA321232538027A00921B0E /* AppDelegate.h */,
+				ADA321242538027A00921B0E /* AppDelegate.m */,
+				ADA321262538027A00921B0E /* SceneDelegate.h */,
+				ADA321272538027A00921B0E /* SceneDelegate.m */,
+				ADA321292538027A00921B0E /* ViewController.h */,
+				ADA3212A2538027A00921B0E /* ViewController.m */,
+				ADA3212C2538027A00921B0E /* Main.storyboard */,
+				ADA3212F2538027C00921B0E /* Assets.xcassets */,
+				ADA321312538027C00921B0E /* LaunchScreen.storyboard */,
+				ADA321342538027C00921B0E /* Info.plist */,
+				ADA321352538027C00921B0E /* main.m */,
+			);
+			path = iOSALDL;
+			sourceTree = "<group>";
+		};
+		ADA3213E2538027D00921B0E /* iOSALDLTests */ = {
+			isa = PBXGroup;
+			children = (
+				ADA3213F2538027D00921B0E /* iOSALDLTests.m */,
+				ADA321412538027D00921B0E /* Info.plist */,
+			);
+			path = iOSALDLTests;
+			sourceTree = "<group>";
+		};
+		ADA321492538027D00921B0E /* iOSALDLUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ADA3214A2538027D00921B0E /* iOSALDLUITests.m */,
+				ADA3214C2538027D00921B0E /* Info.plist */,
+			);
+			path = iOSALDLUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ADA3211F2538027A00921B0E /* iOSALDL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADA3214F2538027D00921B0E /* Build configuration list for PBXNativeTarget "iOSALDL" */;
+			buildPhases = (
+				ADA3211C2538027A00921B0E /* Sources */,
+				ADA3211D2538027A00921B0E /* Frameworks */,
+				ADA3211E2538027A00921B0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSALDL;
+			productName = iOSALDL;
+			productReference = ADA321202538027A00921B0E /* iOSALDL.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ADA3213A2538027D00921B0E /* iOSALDLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADA321522538027D00921B0E /* Build configuration list for PBXNativeTarget "iOSALDLTests" */;
+			buildPhases = (
+				ADA321372538027D00921B0E /* Sources */,
+				ADA321382538027D00921B0E /* Frameworks */,
+				ADA321392538027D00921B0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADA3213D2538027D00921B0E /* PBXTargetDependency */,
+			);
+			name = iOSALDLTests;
+			productName = iOSALDLTests;
+			productReference = ADA3213B2538027D00921B0E /* iOSALDLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ADA321452538027D00921B0E /* iOSALDLUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADA321552538027D00921B0E /* Build configuration list for PBXNativeTarget "iOSALDLUITests" */;
+			buildPhases = (
+				ADA321422538027D00921B0E /* Sources */,
+				ADA321432538027D00921B0E /* Frameworks */,
+				ADA321442538027D00921B0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADA321482538027D00921B0E /* PBXTargetDependency */,
+			);
+			name = iOSALDLUITests;
+			productName = iOSALDLUITests;
+			productReference = ADA321462538027D00921B0E /* iOSALDLUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ADA321182538027A00921B0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					ADA3211F2538027A00921B0E = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					ADA3213A2538027D00921B0E = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = ADA3211F2538027A00921B0E;
+					};
+					ADA321452538027D00921B0E = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = ADA3211F2538027A00921B0E;
+					};
+				};
+			};
+			buildConfigurationList = ADA3211B2538027A00921B0E /* Build configuration list for PBXProject "iOSALDL" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ADA321172538027A00921B0E;
+			productRefGroup = ADA321212538027A00921B0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ADA3211F2538027A00921B0E /* iOSALDL */,
+				ADA3213A2538027D00921B0E /* iOSALDLTests */,
+				ADA321452538027D00921B0E /* iOSALDLUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ADA3211E2538027A00921B0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADA321332538027C00921B0E /* LaunchScreen.storyboard in Resources */,
+				ADA321302538027C00921B0E /* Assets.xcassets in Resources */,
+				ADA3212E2538027A00921B0E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADA321392538027D00921B0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADA321442538027D00921B0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ADA3211C2538027A00921B0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADA3212B2538027A00921B0E /* ViewController.m in Sources */,
+				ADA321252538027A00921B0E /* AppDelegate.m in Sources */,
+				ADA321362538027C00921B0E /* main.m in Sources */,
+				ADA321282538027A00921B0E /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADA321372538027D00921B0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADA321402538027D00921B0E /* iOSALDLTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADA321422538027D00921B0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADA3214B2538027D00921B0E /* iOSALDLUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ADA3213D2538027D00921B0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADA3211F2538027A00921B0E /* iOSALDL */;
+			targetProxy = ADA3213C2538027D00921B0E /* PBXContainerItemProxy */;
+		};
+		ADA321482538027D00921B0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADA3211F2538027A00921B0E /* iOSALDL */;
+			targetProxy = ADA321472538027D00921B0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ADA3212C2538027A00921B0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADA3212D2538027A00921B0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ADA321312538027C00921B0E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADA321322538027C00921B0E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ADA3214D2538027D00921B0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ADA3214E2538027D00921B0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ADA321502538027D00921B0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79UDSDY5VH;
+				INFOPLIST_FILE = iOSALDL/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = amperic.iOSALDL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ADA321512538027D00921B0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79UDSDY5VH;
+				INFOPLIST_FILE = iOSALDL/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = amperic.iOSALDL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ADA321532538027D00921B0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79UDSDY5VH;
+				INFOPLIST_FILE = iOSALDLTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = amperic.iOSALDLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSALDL.app/iOSALDL";
+			};
+			name = Debug;
+		};
+		ADA321542538027D00921B0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79UDSDY5VH;
+				INFOPLIST_FILE = iOSALDLTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = amperic.iOSALDLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSALDL.app/iOSALDL";
+			};
+			name = Release;
+		};
+		ADA321562538027D00921B0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79UDSDY5VH;
+				INFOPLIST_FILE = iOSALDLUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = amperic.iOSALDLUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOSALDL;
+			};
+			name = Debug;
+		};
+		ADA321572538027D00921B0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79UDSDY5VH;
+				INFOPLIST_FILE = iOSALDLUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = amperic.iOSALDLUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOSALDL;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ADA3211B2538027A00921B0E /* Build configuration list for PBXProject "iOSALDL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADA3214D2538027D00921B0E /* Debug */,
+				ADA3214E2538027D00921B0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADA3214F2538027D00921B0E /* Build configuration list for PBXNativeTarget "iOSALDL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADA321502538027D00921B0E /* Debug */,
+				ADA321512538027D00921B0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADA321522538027D00921B0E /* Build configuration list for PBXNativeTarget "iOSALDLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADA321532538027D00921B0E /* Debug */,
+				ADA321542538027D00921B0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADA321552538027D00921B0E /* Build configuration list for PBXNativeTarget "iOSALDLUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADA321562538027D00921B0E /* Debug */,
+				ADA321572538027D00921B0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ADA321182538027A00921B0E /* Project object */;
+}
