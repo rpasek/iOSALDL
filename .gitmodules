@@ -1,0 +1,3 @@
+[submodule "iOSALDL/MMSpreadsheetView"]
+	path = iOSALDL/MMSpreadsheetView
+	url = https://github.com/mutualmobile/MMSpreadsheetView.git
