@@ -44,6 +44,7 @@
         <scene sceneID="fMl-ug-wcx">
             <objects>
                 <tabBarController id="x5S-Jr-7XE" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="iOS ALDL" id="4in-fi-lro">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" style="plain" id="wGb-9S-XJK">
                             <connections>

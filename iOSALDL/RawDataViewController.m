@@ -15,7 +15,6 @@
 @interface RawDataViewController () <MMSpreadsheetViewDataSource, MMSpreadsheetViewDelegate>
 
 @property (nonatomic, strong) NSMutableSet *selectedGridCells;
-@property (nonatomic, strong) NSMutableArray *tableData;
 @property (nonatomic, strong) NSString *cellDataBuffer;
 
 @end
@@ -25,6 +24,51 @@
 #ifndef ARRAY_SIZE
 #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
 #endif
+
+typedef union _ALDLData_t {
+    uint8_t bytes[20];
+    struct {
+        uint8_t MW2;
+        uint8_t PROMIDA;
+        uint8_t PROMIDB;
+        uint8_t IAC;
+        uint8_t CT;
+        uint8_t MPH;
+        uint8_t MAP;
+        uint8_t RPM;
+        uint8_t TPS;
+        uint8_t INT;
+        uint8_t O2;
+        uint8_t MALFFLG1;
+        uint8_t MALFFLG2;
+        uint8_t MALFFLG3;
+        uint8_t MWAF1;
+        uint8_t VOLT;
+        uint8_t MCU2IO;
+        uint8_t KNOCK_CNT;
+        uint8_t BLM;
+        uint8_t O2_CNT;
+    } items;
+} ALDLData_t;
+
+ALDLData_t ALDLData[] = {
+    [0].bytes =  { 36, 15, 71, 46, 59, 0, 65, 40, 25, 129, 163, 0, 0, 0, 178, 249, 65, 10, 122, 112, },
+    [1].bytes =  { 32, 15, 71, 46, 59, 0, 66, 41, 25, 128, 104, 0, 0, 0, 242, 253, 65, 10, 122, 111, },
+    [2].bytes =  { 36, 15, 71, 45, 59, 0, 64, 40, 25, 127, 140, 0, 0, 0, 178, 248, 73, 10, 122, 110, },
+    [3].bytes =  { 32, 15, 71, 45, 59, 0, 65, 40, 25, 129, 166, 0, 0, 0, 242, 248, 73, 10, 122, 109, },
+    [4].bytes =  { 36, 15, 71, 45, 59, 0, 66, 39, 25, 126,  90, 0, 0, 0, 178, 248, 65, 10, 122, 108, },
+    [5].bytes =  { 32, 15, 71, 45, 59, 0, 64, 41, 25, 129, 201, 0, 0, 0, 242, 252, 65, 10, 122, 107, },
+    [6].bytes =  { 36, 15, 71, 45, 59, 0, 67, 39, 25, 125,  87, 0, 0, 0, 178, 248, 73, 10, 122, 106, },
+    [7].bytes =  { 36, 15, 71, 45, 59, 0, 64, 40, 25, 126, 109, 0, 0, 0, 242, 248, 73, 10, 122, 105, },
+    [8].bytes =  { 36, 15, 71, 45, 59, 0, 65, 40, 25, 125, 168, 0, 0, 0, 242, 248, 65, 10, 122, 104, },
+    [9].bytes =  { 32, 15, 71, 45, 59, 0, 62, 40, 25, 128, 199, 0, 0, 0, 210, 252, 65, 10, 122, 102, },
+    [10].bytes = { 32, 15, 71, 45, 59, 0, 65, 40, 25, 128, 113, 0, 0, 0, 242, 248, 73, 10, 122, 101, },
+    [11].bytes = { 36, 15, 71, 45, 59, 0, 64, 39, 25, 126, 100, 0, 0, 0, 178, 248, 73, 10, 122, 100, },
+    [12].bytes = { 36, 15, 71, 46, 60, 0, 63, 41, 25, 130, 212, 0, 0, 0, 242, 248, 65, 10, 122,  99, },
+    [13].bytes = { 32, 15, 71, 46, 59, 0, 64, 41, 25, 130, 118, 0, 0, 0, 178, 253, 65, 10, 122,  98, },
+};
+
+size_t ALDLDataLen = ARRAY_SIZE(ALDLData);
 
 const char *RAWDataStrings[] = {
     "MW2",
@@ -155,21 +199,7 @@ const size_t MALFFLG3StringsLen = ARRAY_SIZE(MALFFLG3Strings);
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    NSUInteger rows = RAWDataStringsLen;
-    NSUInteger cols = 9;
-    
-    // Create some fake grid data for the demo.
-    self.tableData = [NSMutableArray array];
-    
-    for (NSUInteger rowNumber = 0; rowNumber < rows; rowNumber++) {
-        NSMutableArray *row = [NSMutableArray array];
-        for (NSUInteger columnNumber = 0; columnNumber < cols; columnNumber++) {
-            [row addObject:[NSString stringWithFormat:@"R%lu:C%lu", (unsigned long)rowNumber, (unsigned long)columnNumber]];
-        }
-        [self.tableData addObject:row];
-    }
-    
+
     self.selectedGridCells = [NSMutableSet set];
 
     // Create the spreadsheet in code.
@@ -195,10 +225,10 @@ const size_t MALFFLG3StringsLen = ARRAY_SIZE(MALFFLG3Strings);
 
 - (CGSize)spreadsheetView:(MMSpreadsheetView *)spreadsheetView sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat leftColumnWidth = 160.0f;
-    CGFloat topRowHeight = 75.0f;
-    CGFloat gridCellWidth = 62.0f;
-    CGFloat gridCellHeight = 51.5f;
+    CGFloat leftColumnWidth = 120.0f;
+    CGFloat topRowHeight = 30.0f;
+    CGFloat gridCellWidth = 50.0f;
+    CGFloat gridCellHeight = 30.0f;
 
     // Upper left.
     if (indexPath.mmSpreadsheetRow == 0 && indexPath.mmSpreadsheetColumn == 0) {
@@ -220,42 +250,38 @@ const size_t MALFFLG3StringsLen = ARRAY_SIZE(MALFFLG3Strings);
 
 - (NSInteger)numberOfRowsInSpreadsheetView:(MMSpreadsheetView *)spreadsheetView
 {
-    NSInteger rows = [self.tableData count];
-    return rows;
+    return RAWDataStringsLen + 1;
 }
 
 - (NSInteger)numberOfColumnsInSpreadsheetView:(MMSpreadsheetView *)spreadsheetView
 {
-    NSArray *rowData = [self.tableData lastObject];
-    NSInteger cols = [rowData count];
-    return cols;
+    return ALDLDataLen + 1;
 }
 
 - (UICollectionViewCell *)spreadsheetView:(MMSpreadsheetView *)spreadsheetView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = nil;
+    long dataRow = indexPath.mmSpreadsheetRow - 1;
+    long dataColumn = indexPath.mmSpreadsheetColumn - 1;
     if (indexPath.mmSpreadsheetRow == 0 && indexPath.mmSpreadsheetColumn == 0) {
         // Upper left.
         cell = [spreadsheetView dequeueReusableCellWithReuseIdentifier:@"GridCell" forIndexPath:indexPath];
         MMGridCell *gc = (MMGridCell *)cell;
-        UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mm_logo"]];
-        [gc.contentView addSubview:logo];
-        logo.center = gc.contentView.center;
-        gc.textLabel.numberOfLines = 0;
+        gc.textLabel.text = @"Sample";
         cell.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
     }
     else if (indexPath.mmSpreadsheetRow == 0 && indexPath.mmSpreadsheetColumn > 0) {
         // Upper right.
         cell = [spreadsheetView dequeueReusableCellWithReuseIdentifier:@"TopRowCell" forIndexPath:indexPath];
         MMTopRowCell *tr = (MMTopRowCell *)cell;
-        tr.textLabel.text = [NSString stringWithFormat:@"TR: %li", (long)indexPath.mmSpreadsheetColumn];
+        tr.textLabel.text = (dataColumn < ALDLDataLen) ? [NSString stringWithFormat:@"%li", dataColumn * -1] : nil;
         cell.backgroundColor = [UIColor whiteColor];
     }
     else if (indexPath.mmSpreadsheetRow > 0 && indexPath.mmSpreadsheetColumn == 0) {
         // Lower left.
         cell = [spreadsheetView dequeueReusableCellWithReuseIdentifier:@"LeftColumnCell" forIndexPath:indexPath];
         MMLeftColumnCell *lc = (MMLeftColumnCell *)cell;
-        lc.textLabel.text = (indexPath.mmSpreadsheetRow - 1) < RAWDataStringsLen ? @(RAWDataStrings[indexPath.mmSpreadsheetRow - 1]) : nil;
+        lc.textLabel.text = (dataRow < RAWDataStringsLen) ? @(RAWDataStrings[dataRow]) : nil;
         BOOL isDarker = indexPath.mmSpreadsheetRow % 2 == 0;
         if (isDarker) {
             cell.backgroundColor = [UIColor colorWithRed:222.0f / 255.0f green:243.0f / 255.0f blue:250.0f / 255.0f alpha:1.0f];
@@ -267,9 +293,7 @@ const size_t MALFFLG3StringsLen = ARRAY_SIZE(MALFFLG3Strings);
         // Lower right.
         cell = [spreadsheetView dequeueReusableCellWithReuseIdentifier:@"GridCell" forIndexPath:indexPath];
         MMGridCell *gc = (MMGridCell *)cell;
-        NSArray *colData = [self.tableData objectAtIndex:indexPath.mmSpreadsheetRow];
-        NSString *rowData = [colData objectAtIndex:indexPath.mmSpreadsheetColumn];
-        gc.textLabel.text = rowData;
+        gc.textLabel.text = (dataColumn < ALDLDataLen && dataRow < sizeof(ALDLData[0].bytes)) ? [NSString stringWithFormat:@"%u", ALDLData[dataColumn].bytes[dataRow]] : nil;
         BOOL isDarker = indexPath.mmSpreadsheetRow % 2 == 0;
         if (isDarker) {
             cell.backgroundColor = [UIColor colorWithRed:242.0f / 255.0f green:242.0f / 255.0f blue:242.0f / 255.0f alpha:1.0f];
@@ -324,9 +348,7 @@ const size_t MALFFLG3StringsLen = ARRAY_SIZE(MALFFLG3Strings);
      
      We're only interested in 3 of them at this point
      */
-    if (action == @selector(cut:) ||
-        action == @selector(copy:) ||
-        action == @selector(paste:)) {
+    if (action == @selector(copy:)) {
         return YES;
     }
     return NO;
@@ -334,18 +356,10 @@ const size_t MALFFLG3StringsLen = ARRAY_SIZE(MALFFLG3Strings);
 
 - (void)spreadsheetView:(MMSpreadsheetView *)spreadsheetView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
 {
-    NSMutableArray *rowData = [self.tableData objectAtIndex:indexPath.mmSpreadsheetRow];
-    if (action == @selector(cut:)) {
-        self.cellDataBuffer = [rowData objectAtIndex:indexPath.row];
-        [rowData replaceObjectAtIndex:indexPath.row withObject:@""];
-        [spreadsheetView reloadData];
-    } else if (action == @selector(copy:)) {
-        self.cellDataBuffer = [rowData objectAtIndex:indexPath.row];
-    } else if (action == @selector(paste:)) {
-        if (self.cellDataBuffer) {
-            [rowData replaceObjectAtIndex:indexPath.row withObject:self.cellDataBuffer];
-            [spreadsheetView reloadData];
-        }
+    long dataRow = indexPath.mmSpreadsheetRow - 1;
+    long dataColumn = indexPath.mmSpreadsheetColumn - 1;
+    if (action == @selector(copy:)) {
+        self.cellDataBuffer = (dataColumn < ALDLDataLen && dataRow < sizeof(ALDLData[0].bytes)) ? [NSString stringWithFormat:@"%u", ALDLData[dataColumn].bytes[dataRow]] : nil;
     }
 }
 
