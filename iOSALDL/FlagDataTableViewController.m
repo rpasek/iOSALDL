@@ -6,8 +6,8 @@
 //
 
 #import "FlagDataTableViewController.h"
-#import "RawDataViewController.h"
 #import "BoolDataTableViewCell.h"
+#import "ECU.h"
 
 @interface FlagDataTableViewController ()
 
@@ -28,41 +28,21 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return FlagDataStringsLen;
+    return ALDLStrings->FlagDataStrings.Num;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return section < FlagDataStringsLen ? @(FlagDataStrings[section]) :nil ;
+    return section < ALDLStrings->FlagDataStrings.Num ? @(ALDLStrings->FlagDataStrings.Items[section].Name) : nil;
 }
  
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-            return MW2StringsLen;
-        case 1:
-            return MWAF1StringsLen;
-        case 2:
-            return MCU2IOStringsLen;
-        default:
-            return 0;
-    }
-    return 0;
+    return section < ALDLStrings->FlagDataStrings.Num ? ALDLStrings->FlagDataStrings.Items[section].Strings.Num : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BoolDataTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BoolDataTableViewCell" forIndexPath:indexPath];
     
-    switch (indexPath.section) {
-        case 0:
-            cell.lblName.text = indexPath.row < MW2StringsLen ? @(MW2Strings[indexPath.row]) : nil;
-            break;
-        case 1:
-            cell.lblName.text = indexPath.row < MWAF1StringsLen ? @(MWAF1Strings[indexPath.row]) : nil;
-            break;
-        case 2:
-            cell.lblName.text = indexPath.row < MCU2IOStringsLen ? @(MCU2IOStrings[indexPath.row]) : nil;
-            break;
-    }
+    cell.lblName.text = (indexPath.section < ALDLStrings->FlagDataStrings.Num && indexPath.row < ALDLStrings->FlagDataStrings.Items[indexPath.section].Strings.Num) ? @(ALDLStrings->FlagDataStrings.Items[indexPath.section].Strings.Items[indexPath.row]) : nil;
     
     return cell;
 }

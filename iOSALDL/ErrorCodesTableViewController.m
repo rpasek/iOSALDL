@@ -1,19 +1,19 @@
 //
-//  ErrorCodeTableViewController.m
+//  ErrorCodesTableViewController.m
 //  iOSALDL
 //
 //  Created by rpasek on 10/15/20.
 //
 
-#import "ErrorCodeTableViewController.h"
-#import "RawDataViewController.h"
+#import "ErrorCodesTableViewController.h"
 #import "BoolDataTableViewCell.h"
+#import "ECU.h"
 
-@interface ErrorCodeTableViewController ()
+@interface ErrorCodesTableViewController ()
 
 @end
 
-@implementation ErrorCodeTableViewController
+@implementation ErrorCodesTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,44 +28,25 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return ErrorCodesStringsLen;
+    return ALDLStrings->ErrorCodesStrings.Num;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return section < ErrorCodesStringsLen ? @(ErrorCodesStrings[section]) :nil ;
+    return section < ALDLStrings->ErrorCodesStrings.Num ? @(ALDLStrings->ErrorCodesStrings.Items[section].Name) : nil;
 }
  
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-            return MALFFLG1StringsLen;
-        case 1:
-            return MALFFLG2StringsLen;
-        case 2:
-            return MALFFLG3StringsLen;
-        default:
-            return 0;
-    }
-    return 0;
+    return section < ALDLStrings->ErrorCodesStrings.Num ? ALDLStrings->ErrorCodesStrings.Items[section].Strings.Num : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BoolDataTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BoolDataTableViewCell" forIndexPath:indexPath];
     
-    switch (indexPath.section) {
-        case 0:
-            cell.lblName.text = indexPath.row < MALFFLG1StringsLen ? @(MALFFLG1Strings[indexPath.row]) : nil;
-            break;
-        case 1:
-            cell.lblName.text = indexPath.row < MALFFLG2StringsLen ? @(MALFFLG2Strings[indexPath.row]) : nil;
-            break;
-        case 2:
-            cell.lblName.text = indexPath.row < MALFFLG3StringsLen ? @(MALFFLG3Strings[indexPath.row]) : nil;
-            break;
-    }
+    cell.lblName.text = (indexPath.section < ALDLStrings->ErrorCodesStrings.Num && indexPath.row < ALDLStrings->ErrorCodesStrings.Items[indexPath.section].Strings.Num) ? @(ALDLStrings->ErrorCodesStrings.Items[indexPath.section].Strings.Items[indexPath.row]) : nil;
     
     return cell;
 }
+
 
 /*
 // Override to support conditional editing of the table view.

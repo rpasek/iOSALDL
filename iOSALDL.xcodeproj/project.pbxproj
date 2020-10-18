@@ -23,8 +23,11 @@
 		ADA32196253883B200921B0E /* MMGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA32194253883B200921B0E /* MMGridCell.m */; };
 		ADA32197253883B200921B0E /* MMLeftColumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA32195253883B200921B0E /* MMLeftColumnCell.m */; };
 		ADA3219D253883BF00921B0E /* MMTopRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA3219B253883BF00921B0E /* MMTopRowCell.m */; };
-		ADA321A32538F6EB00921B0E /* ErrorCodeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA321A22538F6EB00921B0E /* ErrorCodeTableViewController.m */; };
+		ADA321A32538F6EB00921B0E /* ErrorCodesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA321A22538F6EB00921B0E /* ErrorCodesTableViewController.m */; };
 		ADA321A92538F72400921B0E /* BoolDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA321A82538F72400921B0E /* BoolDataTableViewCell.m */; };
+		ADB6C5AD253A3AC4007C7706 /* SensorDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB6C5AC253A3AC4007C7706 /* SensorDataViewController.m */; };
+		ADB6C5B5253BF6EA007C7706 /* ECU1227747.c in Sources */ = {isa = PBXBuildFile; fileRef = ADB6C5B4253BF6EA007C7706 /* ECU1227747.c */; };
+		ADB6C5BB253BF7A6007C7706 /* ECU.c in Sources */ = {isa = PBXBuildFile; fileRef = ADB6C5BA253BF7A6007C7706 /* ECU.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,10 +83,16 @@
 		ADA32195253883B200921B0E /* MMLeftColumnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLeftColumnCell.m; sourceTree = "<group>"; };
 		ADA3219B253883BF00921B0E /* MMTopRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTopRowCell.m; sourceTree = "<group>"; };
 		ADA3219C253883BF00921B0E /* MMTopRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTopRowCell.h; sourceTree = "<group>"; };
-		ADA321A12538F6EB00921B0E /* ErrorCodeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorCodeTableViewController.h; sourceTree = "<group>"; };
-		ADA321A22538F6EB00921B0E /* ErrorCodeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorCodeTableViewController.m; sourceTree = "<group>"; };
+		ADA321A12538F6EB00921B0E /* ErrorCodesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorCodesTableViewController.h; sourceTree = "<group>"; };
+		ADA321A22538F6EB00921B0E /* ErrorCodesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorCodesTableViewController.m; sourceTree = "<group>"; };
 		ADA321A72538F72400921B0E /* BoolDataTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoolDataTableViewCell.h; sourceTree = "<group>"; };
 		ADA321A82538F72400921B0E /* BoolDataTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoolDataTableViewCell.m; sourceTree = "<group>"; };
+		ADB6C5AB253A3AC4007C7706 /* SensorDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensorDataViewController.h; sourceTree = "<group>"; };
+		ADB6C5AC253A3AC4007C7706 /* SensorDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensorDataViewController.m; sourceTree = "<group>"; };
+		ADB6C5B4253BF6EA007C7706 /* ECU1227747.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ECU1227747.c; sourceTree = "<group>"; };
+		ADB6C5B9253BF707007C7706 /* ECU.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECU.h; sourceTree = "<group>"; };
+		ADB6C5BA253BF7A6007C7706 /* ECU.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ECU.c; sourceTree = "<group>"; };
+		ADB6C5C2253C027B007C7706 /* ECU1227747.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECU1227747.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,11 +157,17 @@
 				ADA321272538027A00921B0E /* SceneDelegate.m */,
 				ADA321292538027A00921B0E /* RawDataViewController.h */,
 				ADA3212A2538027A00921B0E /* RawDataViewController.m */,
+				ADB6C5B4253BF6EA007C7706 /* ECU1227747.c */,
+				ADB6C5C2253C027B007C7706 /* ECU1227747.h */,
+				ADB6C5B9253BF707007C7706 /* ECU.h */,
+				ADB6C5BA253BF7A6007C7706 /* ECU.c */,
 				ADA3212C2538027A00921B0E /* Main.storyboard */,
+				ADB6C5AB253A3AC4007C7706 /* SensorDataViewController.h */,
+				ADB6C5AC253A3AC4007C7706 /* SensorDataViewController.m */,
 				AD1A2A682539586D00FC436E /* FlagDataTableViewController.h */,
 				AD1A2A692539586D00FC436E /* FlagDataTableViewController.m */,
-				ADA321A12538F6EB00921B0E /* ErrorCodeTableViewController.h */,
-				ADA321A22538F6EB00921B0E /* ErrorCodeTableViewController.m */,
+				ADA321A12538F6EB00921B0E /* ErrorCodesTableViewController.h */,
+				ADA321A22538F6EB00921B0E /* ErrorCodesTableViewController.m */,
 				ADA321A72538F72400921B0E /* BoolDataTableViewCell.h */,
 				ADA321A82538F72400921B0E /* BoolDataTableViewCell.m */,
 				ADA3212F2538027C00921B0E /* Assets.xcassets */,
@@ -336,16 +351,19 @@
 				ADA3212B2538027A00921B0E /* RawDataViewController.m in Sources */,
 				ADA3216925387ED300921B0E /* NSIndexPath+MMSpreadsheetView.m in Sources */,
 				ADA3219D253883BF00921B0E /* MMTopRowCell.m in Sources */,
+				ADB6C5BB253BF7A6007C7706 /* ECU.c in Sources */,
 				ADA32197253883B200921B0E /* MMLeftColumnCell.m in Sources */,
+				ADB6C5B5253BF6EA007C7706 /* ECU1227747.c in Sources */,
 				ADA321252538027A00921B0E /* AppDelegate.m in Sources */,
 				ADA3216725387ED300921B0E /* MMSpreadsheetView.m in Sources */,
 				ADA321362538027C00921B0E /* main.m in Sources */,
 				AD1A2A6A2539586D00FC436E /* FlagDataTableViewController.m in Sources */,
 				ADA321A92538F72400921B0E /* BoolDataTableViewCell.m in Sources */,
 				ADA321282538027A00921B0E /* SceneDelegate.m in Sources */,
+				ADB6C5AD253A3AC4007C7706 /* SensorDataViewController.m in Sources */,
 				ADA3216825387ED300921B0E /* MMGridLayout.m in Sources */,
 				ADA32196253883B200921B0E /* MMGridCell.m in Sources */,
-				ADA321A32538F6EB00921B0E /* ErrorCodeTableViewController.m in Sources */,
+				ADA321A32538F6EB00921B0E /* ErrorCodesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

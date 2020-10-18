@@ -1,5 +1,5 @@
 //
-//  ErrorCodeTableViewController.h
+//  ErrorCodesTableViewController.h
 //  iOSALDL
 //
 //  Created by rpasek on 10/15/20.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ErrorCodeTableViewController : UITableViewController
+@interface ErrorCodesTableViewController : UITableViewController
 
 @end
 
