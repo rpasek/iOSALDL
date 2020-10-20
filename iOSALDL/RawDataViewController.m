@@ -23,6 +23,8 @@
 @implementation RawDataViewController
 
 - (void)viewDidLoad {
+    ALDLData.Process();
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
@@ -81,7 +83,7 @@
 
 - (NSInteger)numberOfColumnsInSpreadsheetView:(MMSpreadsheetView *)spreadsheetView
 {
-    return ALDLDataLen + 1;
+    return ALDLData.RawData.Num + 1;
 }
 
 - (UICollectionViewCell *)spreadsheetView:(MMSpreadsheetView *)spreadsheetView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -100,7 +102,7 @@
         // Upper right.
         cell = [spreadsheetView dequeueReusableCellWithReuseIdentifier:@"TopRowCell" forIndexPath:indexPath];
         MMTopRowCell *tr = (MMTopRowCell *)cell;
-        tr.textLabel.text = (dataColumn < ALDLDataLen) ? [NSString stringWithFormat:@"%li", dataColumn * -1] : nil;
+        tr.textLabel.text = (dataColumn < ALDLData.RawData.Num) ? [NSString stringWithFormat:@"%li", dataColumn * -1] : nil;
         cell.backgroundColor = [UIColor whiteColor];
     }
     else if (indexPath.mmSpreadsheetRow > 0 && indexPath.mmSpreadsheetColumn == 0) {
@@ -119,7 +121,7 @@
         // Lower right.
         cell = [spreadsheetView dequeueReusableCellWithReuseIdentifier:@"GridCell" forIndexPath:indexPath];
         MMGridCell *gc = (MMGridCell *)cell;
-        gc.textLabel.text = (dataColumn < ALDLDataLen && dataRow < sizeof(ALDLData[0].bytes)) ? [NSString stringWithFormat:@"%u", ALDLData[dataColumn].bytes[dataRow]] : nil;
+        gc.textLabel.text = (dataColumn < ALDLData.RawData.Num && dataRow < ALDLData.RawData.EntrySize) ? [NSString stringWithFormat:@"%u", ALDLData.RawData.Data[(dataColumn * ALDLData.RawData.EntrySize) + dataRow]] : nil;
         BOOL isDarker = indexPath.mmSpreadsheetRow % 2 == 0;
         if (isDarker) {
             cell.backgroundColor = [UIColor colorWithRed:242.0f / 255.0f green:242.0f / 255.0f blue:242.0f / 255.0f alpha:1.0f];
@@ -185,7 +187,7 @@
     long dataRow = indexPath.mmSpreadsheetRow - 1;
     long dataColumn = indexPath.mmSpreadsheetColumn - 1;
     if (action == @selector(copy:)) {
-        self.cellDataBuffer = (dataColumn < ALDLDataLen && dataRow < sizeof(ALDLData[0].bytes)) ? [NSString stringWithFormat:@"%u", ALDLData[dataColumn].bytes[dataRow]] : nil;
+        self.cellDataBuffer = (dataColumn < ALDLData.RawData.Num && dataRow < ALDLData.RawData.EntrySize) ? [NSString stringWithFormat:@"%u", ALDLData.RawData.Data[(dataColumn * ALDLData.RawData.EntrySize) + dataRow]] : nil;
     }
 }
 

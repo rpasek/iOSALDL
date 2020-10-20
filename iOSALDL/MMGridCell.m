@@ -30,6 +30,7 @@
         _textLabel = [[UILabel alloc] initWithFrame:rect];
         _textLabel.backgroundColor = [UIColor clearColor];
         _textLabel.textAlignment = NSTextAlignmentCenter;
+        _textLabel.font = [UIFont systemFontOfSize:12.0f];
         _textLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self.contentView addSubview:_textLabel];
     }

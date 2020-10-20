@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SensorDataViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *sensorSpreadsheetView;
 
 @end
 

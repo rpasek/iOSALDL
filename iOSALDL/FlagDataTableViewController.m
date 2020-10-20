@@ -43,6 +43,7 @@
     BoolDataTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BoolDataTableViewCell" forIndexPath:indexPath];
     
     cell.lblName.text = (indexPath.section < ALDLStrings->FlagDataStrings.Num && indexPath.row < ALDLStrings->FlagDataStrings.Items[indexPath.section].Strings.Num) ? @(ALDLStrings->FlagDataStrings.Items[indexPath.section].Strings.Items[indexPath.row]) : nil;
+    cell.imgState.image = (indexPath.section < ALDLData.FlagData.Num && indexPath.row < 8 && ((ALDLData.FlagData.Data[indexPath.section] >> indexPath.row) & 1) == 1) ? [UIImage systemImageNamed:@"checkmark.square"] : [UIImage systemImageNamed:@"square"];
     
     return cell;
 }

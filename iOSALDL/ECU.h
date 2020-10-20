@@ -32,6 +32,8 @@ typedef struct _ALDLStrings_t {
     const StringPtrs_t RAWDataStrings;
     const StatusFlagStringsPtrs_t FlagDataStrings;
     const StringPtrs_t SensorDataStrings;
+    const StringPtrs_t SensorDataUSStrings;
+    const StringPtrs_t SensorDataMetricStrings;
     const StatusFlagStringsPtrs_t ErrorCodesStrings;
 } ALDLStrings_t;
 
@@ -40,12 +42,47 @@ typedef struct _ALDLStringPtrs_t {
     const ALDLStrings_t **Items;
 } ALDLStringPtrs_t;
 
-typedef union _ALDLData_t {
-    uint8_t bytes[20];
+typedef struct _RawData_t {
+    size_t Num;
+    size_t EntrySize;
+    size_t BufSize;
+    uint8_t *Data;
+} RawData_t;
+
+typedef struct _FlagData_t {
+    size_t Num;
+    uint8_t *Data;
+} FlagData_t;
+
+enum eSensorEntries {
+    eSensorEntryMin,
+    eSensorEntryLatest,
+    eSensorEntryMax,
+    eSensorEntriesMax,
+};
+
+typedef struct _SensorEntry_t {
+    struct {
+        char Raw[12];
+        char US[12];
+        char Metric[12];
+    } Entries[eSensorEntriesMax];
+} SensorEntry_t;
+
+typedef struct _SensorData_t {
+    size_t Num;
+    SensorEntry_t *Data;
+} SensorData_t;
+
+typedef struct _ALDLData_t {
+    void (*Process)(void);
+    RawData_t RawData;
+    FlagData_t FlagData;
+    SensorData_t SensorData;
+    FlagData_t ErrorCodes;
 } ALDLData_t;
 
 extern const ALDLStrings_t *ALDLStrings;
-extern ALDLData_t *ALDLData;
-extern size_t ALDLDataLen;
+extern ALDLData_t ALDLData;
 
 #endif /* ECU_h */
